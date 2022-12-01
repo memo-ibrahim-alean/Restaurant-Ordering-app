@@ -29,7 +29,7 @@ header p {
   padding-top: 1%;
 }
 
-.main-container {
+#main-container {
   margin: 20% 0;
   width: 80%;
   margin: 0 auto;
@@ -41,13 +41,13 @@ header p {
   justify-content: space-between;
   margin: 20px 0;
   padding-bottom: 20px;
-  border-bottom: 1px solid #D2D2D2;
+  border-bottom: 1px solid #d2d2d2;
 }
 
-.order-item img {
+.order-item span {
   display: inline-block;
-  height: 60px;
-  margin: auto;
+  height: 100%;
+  font-size: 3.5em;
 }
 
 .order-details {
