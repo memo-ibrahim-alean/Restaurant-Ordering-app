@@ -29,10 +29,65 @@ header p {
   padding-top: 1%;
 }
 
-#main-container {
-  margin: 20% 0;
+#main-container,
+#order-review {
   width: 80%;
   margin: 0 auto;
+}
+
+#order-review {
+  text-align: center;
+  border-bottom: 1px solid #393333;
+}
+
+#order-total {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#order-total h3 {
+  font-size: 27px;
+  margin: 0;
+  padding: 10px 0;
+}
+
+#order-total h4 {
+  font-size: 18px;
+  margin: 0;
+}
+
+#order-review h2 {
+  font-size: 30px;
+}
+
+.order-review-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.order-review-data span {
+  position: absolute;
+  left: 12%;
+  top: 30%;
+  font-size: 13px;
+  color: #bbbbbb;
+  cursor: pointer;
+}
+
+.order-review-data h3 {
+  font-size: 27px;
+  margin: 0;
+  margin-right: 20px;
+}
+
+.order-review-data h4 {
+  font-size: 18px;
+  margin: 0;
+  margin-right: 20px;
 }
 
 .order-item {

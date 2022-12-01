@@ -17,7 +17,7 @@ function render() {
         <div class="order-details">
           <h2>${menuItem.name}</h2>
           <p>${menuItem.ingredients}</p>
-          <h3>$${menuItem.name}</h3>
+          <h3>$${menuItem.price}</h3>
         </div>
         <button>+</button>
       </div>
