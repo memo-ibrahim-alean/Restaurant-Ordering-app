@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: "Smythe", cursive;
+}
+
+header {
+  background-image: url(./images/bg.png);
+  height: 160px;
+  color: #fff;
+}
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+header h1,
+header p {
+  margin: 0;
+  padding-left: 4%;
+}
+
+header h1 {
+  font-size: 2.6em;
+  padding-top: 3%;
+}
+
+header p {
+  font-size: 1.2em;
+  padding-top: 1%;
+}
+
+.main-container {
+  margin: 20% 0;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.order-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #D2D2D2;
+}
+
+.order-item img {
+  display: inline-block;
+  height: 60px;
+  margin: auto;
+}
+
+.order-details {
+  flex: 2;
+  margin-left: 20px;
+}
+
+.order-details h2,
+.order-details h3,
+.order-details p {
+  margin: 0;
+}
+
+.order-details p {
+  margin: 5px 0;
+  color: #8b8b8b;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+button {
+  color: #3c3c3c;
+  font-size: 1.4em;
+  border-radius: 100%;
+  border: 0.2px solid #8b8b8b;
+  height: 100%;
+  padding: 10px;
+  width: auto;
+  background: none;
+  margin: auto 0;
+  cursor: pointer;
+}
