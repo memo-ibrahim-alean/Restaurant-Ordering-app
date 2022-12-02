@@ -37,7 +37,6 @@ header p {
 
 #order-review {
   text-align: center;
-  border-bottom: 1px solid #393333;
 }
 
 #order-total {
@@ -71,7 +70,7 @@ header p {
 
 .order-review-data span {
   position: absolute;
-  left: 12%;
+  left: 23%;
   top: 30%;
   font-size: 13px;
   color: #bbbbbb;
