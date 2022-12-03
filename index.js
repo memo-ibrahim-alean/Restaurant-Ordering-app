@@ -23,13 +23,15 @@ document.addEventListener("click", function (e) {
     // only splice array when item is found
     if (objIndex > -1) {
       ordersArr.splice(objIndex, 1); // 2nd parameter means remove one item only
-      console.log(ordersArr);
+      renderAfterRemove(removeEL);
     }
   }
 });
 
-function removeItem(removeEL) {
-  // console.log("removeOrderId: " + removeOrderId);
+function renderAfterRemove(removeEL) {
+  const removedPrice = Number(removeEL.getElementsByTagName("h4")[0].innerHTML);
+  total -= removedPrice;
+  renderOrderArr();
 }
 
 function selectedItem(orderId) {
@@ -40,16 +42,24 @@ function selectedItem(orderId) {
     price: orderEl.getElementsByTagName("h3")[0].dataset.price,
     newId: uuid(),
   };
-  const orderTotalEL = document.getElementById("order-total");
 
   ordersArr.push(orderObj);
   total += Number(orderEl.getElementsByTagName("h3")[0].dataset.price);
+  renderOrderArr();
+}
 
-  orderTotalEL.innerHTML = `
+function renderTotal() {
+  const orderTotalEL = document.getElementById("order-total");
+  if (total === 0) {
+    orderTotalEL.innerHTML = "";
+    orderReviewEl.style.borderBottom = "";
+  } else {
+    orderReviewEl.style.borderBottom = "1px solid #393333";
+    orderTotalEL.innerHTML = `
   <h3>Total price:</h3>
   <h4>${total}</h4>
   `;
-  renderOrderArr();
+  }
 }
 
 function renderOrderArr() {
@@ -65,7 +75,7 @@ function renderOrderArr() {
 
   orderReviewEl.innerHTML = reviewString;
 
-  orderReviewEl.style.borderBottom = "1px solid #393333";
+  renderTotal();
 }
 
 function render() {
