@@ -5,6 +5,8 @@ let c = 0;
 let total = 0;
 const mainContainerEl = document.getElementById("main-container");
 const orderReviewEl = document.getElementById("order-review");
+const completeOrderBtn = document.getElementById("complete-order-btn");
+
 let ordersArr = [];
 let reviewString = "";
 
@@ -51,6 +53,7 @@ function selectedItem(orderId) {
 function renderTotal() {
   const orderTotalEL = document.getElementById("order-total");
   if (total === 0) {
+    orderReviewEl.innerHTML = "";
     orderTotalEL.innerHTML = "";
     orderReviewEl.style.borderBottom = "";
   } else {
@@ -58,6 +61,7 @@ function renderTotal() {
     orderTotalEL.innerHTML = `
   <h3>Total price:</h3>
   <h4>${total}</h4>
+  <button id="complete-order-btn">Complete order</button>
   `;
   }
 }
@@ -73,7 +77,8 @@ function renderOrderArr() {
       </div>`;
   });
 
-  orderReviewEl.innerHTML = reviewString;
+  orderReviewEl.innerHTML = "<h2>Your Order</h2>";
+  orderReviewEl.innerHTML += reviewString;
 
   renderTotal();
 }
