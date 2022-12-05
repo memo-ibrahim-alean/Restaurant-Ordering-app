@@ -136,11 +136,12 @@ header p {
   cursor: pointer;
 }
 
-#complete-order-btn  {
+#complete-order-btn,
+#accept-btn {
   width: 80%;
   font-size: 20px;
   font-weight: bold;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   border-radius: 5px;
   border: none;
   background-color: #16db99;
@@ -150,7 +151,114 @@ header p {
   padding: 10px;
 }
 
-#complete-order-btn:hover {
+#complete-order-btn:hover,
+#accept-btn:hover {
   background-color: #0de89f;
   color: #3c3c3c;
+}
+
+/* modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 420px;
+  width: 400px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 2px #666;
+  background-color: #fff;
+  color: black;
+}
+
+.modal-inner {
+  width: 290px;
+  margin: 0 auto;
+}
+
+.modal-inner h2 {
+  text-align: center;
+}
+
+/* modal buttons */
+
+.close-modal-btn-container {
+  text-align: right;
+  margin: 9px;
+}
+
+.modal-close-btn {
+  font-size: 22px;
+  font-weight: bold;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: #3c3c3c;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:active {
+  color: red;
+  cursor: pointer;
+}
+
+.modal-close-btn:disabled {
+  color: #3c3c3c;
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.modal-choice-btns {
+  margin-top: 10px;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-choice-btns-reverse {
+  flex-direction: row-reverse;
+}
+
+.modal-btn {
+  padding: 10px 24px;
+  cursor: pointer;
+}
+
+/* modal input */
+
+input {
+  margin-top: 10px;
+  border: 1px solid #757575;
+  padding: 10px;
+  width: 100%;
+  border-radius: 3px;
+  background: none;
+}
+
+/* modal after submit */
+
+.loading {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.modal-display-name {
+  color: fuchsia;
+}
+
+.modal-text {
+  height: 140px;
+  line-height: 23px;
+  margin-bottom: 0;
+}
+
+.thanks {
+  background-color: #ecfdf5;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 30px;
 }

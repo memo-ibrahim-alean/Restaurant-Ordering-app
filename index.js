@@ -5,7 +5,7 @@ let c = 0;
 let total = 0;
 const mainContainerEl = document.getElementById("main-container");
 const orderReviewEl = document.getElementById("order-review");
-const completeOrderBtn = document.getElementById("complete-order-btn");
+const orderTotalEL = document.getElementById("order-total");
 
 let ordersArr = [];
 let reviewString = "";
@@ -51,7 +51,6 @@ function selectedItem(orderId) {
 }
 
 function renderTotal() {
-  const orderTotalEL = document.getElementById("order-total");
   if (total === 0) {
     orderReviewEl.innerHTML = "";
     orderTotalEL.innerHTML = "";
@@ -81,6 +80,39 @@ function renderOrderArr() {
   orderReviewEl.innerHTML += reviewString;
 
   renderTotal();
+
+  const modalEl = document.getElementById("modal");
+  const closeBtnEl = document.getElementById("modal-close-btn");
+  const consentForm = document.getElementById("login-form");
+  const completeOrderBtn = document.getElementById("complete-order-btn");
+  const acceptBtn = document.getElementById("accept-btn");
+
+  completeOrderBtn.addEventListener("click", function () {
+    modalEl.style.display = "inline";
+  });
+
+  closeBtnEl.addEventListener("click", function () {
+    modalEl.style.display = "none";
+  });
+
+  consentForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const consentFormData = new FormData(consentForm);
+    const Name = consentFormData.get("name");
+    const Card = consentFormData.get("card");
+    const CVV = consentFormData.get("CVV");
+
+    acceptBtn.addEventListener("click", function () {
+      modalEl.style.display = "none";
+      orderTotalEL.style.display = "none";
+      orderReviewEl.style.borderBottom = "none";
+      orderReviewEl.innerHTML = `
+        <div class="thanks">Thanks ${Name} ❤️ Your order is on its way!</div>
+      `;
+  });
+
+  });
 }
 
 function render() {

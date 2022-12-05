@@ -24,9 +24,47 @@
         <div id="main-container"></div>
       </main>
       <div id="order-review"></div>
-      <div id="order-total">
+      <div id="order-total"></div>
+      <div class="modal" id="modal">
+        <div class="close-modal-btn-container">
+          <button class="modal-close-btn" id="modal-close-btn">X</button>
+        </div>
+        <div class="modal-inner" id="modal-inner">
+          <h2>Enter card details</h2>
+          <form id="login-form">
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              aria-label="name"
+              required
+            />
+            <input
+              type="tel"
+              inputmode="numeric"
+              pattern="[0-9\s]{13,19}"
+              autocomplete="cc-number"
+              maxlength="19"
+              placeholder="xxxx xxxx xxxx xxxx"
+              required
+            />
+            <input
+              type="tel"
+              minlength="3"
+              maxlength="3"
+              name="CVV"
+              placeholder="Enter CVV"
+              aria-label="CVV"
+              required
+            />
+            <div class="modal-choice-btns" id="modal-choice-btns">
+              <button class="modal-btn" type="submit" id="accept-btn">
+                PAY
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-
     </div>
     <script src="./index.js" type="module"></script>
   </body>
