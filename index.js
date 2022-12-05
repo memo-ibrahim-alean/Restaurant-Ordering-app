@@ -51,18 +51,24 @@ function selectedItem(orderId) {
 }
 
 function renderTotal() {
-  if (total === 0) {
+  if (ordersArr.length === 0) {
+    total = 0;
+    // orderTotalEL.style.display = "block";
+    // orderReviewEl.style.borderBottom = "block";
     orderReviewEl.innerHTML = "";
     orderTotalEL.innerHTML = "";
     orderReviewEl.style.borderBottom = "";
-  } else {
-    orderReviewEl.style.borderBottom = "1px solid #393333";
-    orderTotalEL.innerHTML = `
+    return;
+  }
+
+  // console.log(total);
+  orderTotalEL.style.display = "flex";
+  orderReviewEl.style.borderBottom = "1px solid #393333";
+  orderTotalEL.innerHTML = `
   <h3>Total price:</h3>
   <h4>${total}</h4>
   <button id="complete-order-btn">Complete order</button>
   `;
-  }
 }
 
 function renderOrderArr() {
@@ -78,7 +84,6 @@ function renderOrderArr() {
 
   orderReviewEl.innerHTML = "<h2>Your Order</h2>";
   orderReviewEl.innerHTML += reviewString;
-
   renderTotal();
 
   const modalEl = document.getElementById("modal");
@@ -110,8 +115,12 @@ function renderOrderArr() {
       orderReviewEl.innerHTML = `
         <div class="thanks">Thanks ${Name} ❤️ Your order is on its way!</div>
       `;
-  });
+      ordersArr = [];
+      reviewString = "";
+      total = 0;
 
+      return;
+    });
   });
 }
 
